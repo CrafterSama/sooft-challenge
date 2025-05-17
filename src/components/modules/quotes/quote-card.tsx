@@ -1,6 +1,6 @@
 import Card from '@/components/ui/card';
 import { Quote } from '@/types/quote';
-import { IconButton, Text } from '@chakra-ui/react';
+import { Flex, IconButton, Text } from '@chakra-ui/react';
 import { LuTrash } from 'react-icons/lu';
 
 const QuoteCard = ({
@@ -12,24 +12,38 @@ const QuoteCard = ({
 }) => {
   return (
     <Card width="230px">
-      <IconButton
-        aria-label="Delete Phrase"
-        onClick={() => handleOpenDeleteQuote(quote)}
-        background="red.400"
-        size="xs"
-        width={8}
-        position="absolute"
-        top="-.35rem"
-        right="-.35rem"
-      >
-        <LuTrash />
-      </IconButton>
-      <Text fontSize="2xl" fontWeight="semibold" textAlign="center">
-        {quote.phrase}
-      </Text>
-      <Text fontSize="sm" textAlign="center">
-        {quote.author}
-      </Text>
+      <Flex direction="column" justifyContent="space-between" w="full" h="full">
+        <IconButton
+          aria-label="Delete Phrase"
+          onClick={() => handleOpenDeleteQuote(quote)}
+          background="red.400"
+          size="xs"
+          width={8}
+          position="absolute"
+          top="-.35rem"
+          right="-.35rem"
+        >
+          <LuTrash />
+        </IconButton>
+        <Text
+          fontSize="xl"
+          fontFamily="serif"
+          fontStyle="italic"
+          fontWeight="semibold"
+          textAlign="start"
+        >
+          {quote.phrase}
+        </Text>
+        <Text
+          fontSize="sm"
+          fontFamily="serif"
+          fontStyle="italic"
+          textAlign="start"
+          justifySelf="flex-end"
+        >
+          {`- ${quote.author}`}
+        </Text>
+      </Flex>
     </Card>
   );
 };
