@@ -21,7 +21,9 @@ Todo se creo de forma tal que se pudiera presentar lo solicitado, lo cual se log
 ### Razones Claves para elegir el patrón modular
 
 Cada feature tiene su "módulo" autocontenido.
+
 Se mantiene la separación de responsabilidades: UI, lógica, estado, modulos, servicios, etc.
+
 Facilita el escalado del proyecto.
 
 ### Posibles Mejoras
