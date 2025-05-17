@@ -30,7 +30,7 @@ Facilita el escalado del proyecto.
 
 1. Integrar con una API conectada a una BD para guardar las frases en la misma.
 2. Uso de Tanstack/React Query para lo que es la conexión a los serivcios API y el cache de los datos
-3. un Login con datos realies provenientes de una BD y el uso de JWT o cookies/token del lado del server para mejor seguridad
+3. un Login con datos reales provenientes de una BD y el uso de JWT o cookies/token del lado del server para mejor seguridad
 
 ### Para empezar
 
