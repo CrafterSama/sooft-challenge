@@ -47,5 +47,5 @@ pnpm test
 # or
 bun test
 ```
-# sooft-challenge
+
 # sooft-challenge
