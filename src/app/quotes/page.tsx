@@ -10,7 +10,7 @@ import Pagination from '@/components/ui/template/pagination';
 import { toaster } from '@/components/ui/toaster';
 import useAppStoreContext from '@/state-management/users-app-global-state';
 import { Quote } from '@/types/quote';
-import { Flex } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 
 const UsersPage = () => {
   const { quotes, deleteQuote } = useAppStoreContext();
@@ -74,9 +74,12 @@ const UsersPage = () => {
         setCurrentPage={setCurrentPage}
       />
 
-      <QuoteGridHeader onCreateQuote={handleCreateQuote} />
+      <QuoteGridHeader />
 
-      <QuoteGridHeaderActions handleSearch={handleSearch} />
+      <QuoteGridHeaderActions
+        handleSearch={handleSearch}
+        onCreateQuote={handleCreateQuote}
+      />
 
       <QuoteGrid
         paginatedQuotes={paginatedQuotes}
@@ -88,6 +91,10 @@ const UsersPage = () => {
         setCurrentPage={setCurrentPage}
         totalPages={totalPages}
       />
+      <Text fontSize="sm" textAlign="center" color="gray.400">
+        Creado por{' '}
+        <a href="https://www.linkedin.com/in/julmerolivero">Julmer Olivero</a>
+      </Text>
     </Flex>
   );
 };

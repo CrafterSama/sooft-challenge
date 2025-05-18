@@ -4,6 +4,7 @@ import { Card as CardComponent } from '@chakra-ui/react';
 
 interface CardComponentProps {
   width?: string;
+  height?: string;
   header?: string | React.ReactNode;
   children: React.ReactNode;
 }

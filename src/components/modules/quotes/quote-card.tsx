@@ -1,6 +1,5 @@
-import Card from '@/components/ui/card';
 import { Quote } from '@/types/quote';
-import { Flex, IconButton, Text } from '@chakra-ui/react';
+import { Box, Flex, IconButton, Text } from '@chakra-ui/react';
 import { LuTrash } from 'react-icons/lu';
 
 const QuoteCard = ({
@@ -11,7 +10,24 @@ const QuoteCard = ({
   handleOpenDeleteQuote: (quote: Quote) => void;
 }) => {
   return (
-    <Card width="230px">
+    <Box
+      width={{
+        base: 'full',
+        sm: 'w-1/2',
+        md: 'w-1/3',
+        lg: 'w-1/4',
+        xl: 'w-1/5',
+      }}
+      minW={{
+        base: 'full',
+        xl: '230px',
+      }}
+      padding="1rem"
+      height="200px"
+      borderRadius="sm"
+      shadow="md"
+      position="relative"
+    >
       <Flex direction="column" justifyContent="space-between" w="full" h="full">
         <IconButton
           aria-label="Delete Phrase"
@@ -44,7 +60,7 @@ const QuoteCard = ({
           {`- ${quote.author}`}
         </Text>
       </Flex>
-    </Card>
+    </Box>
   );
 };
 

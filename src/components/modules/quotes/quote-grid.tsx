@@ -1,6 +1,13 @@
 import { useState } from 'react';
 
-import { AvatarIcon, Button, Flex, For, Stack, Text } from '@chakra-ui/react';
+import {
+  AvatarIcon,
+  Button,
+  Flex,
+  For,
+  SimpleGrid,
+  Text,
+} from '@chakra-ui/react';
 
 import Dialog from '@/components/ui/dialog';
 import { EmptyState } from '@/components/ui/empty-state';
@@ -42,7 +49,7 @@ const QuoteGrid = ({ paginatedQuotes, handleDeleteQuote }: QuoteGridProps) => {
   };
 
   return (
-    <Flex direction="row" gap="4" mt="4" flex={1} w="full" wrap="wrap">
+    <>
       <Dialog
         open={isOpenDeleteQuote}
         onOpenChange={() => setIsOpenDeleteQuote(false)}
@@ -52,48 +59,73 @@ const QuoteGrid = ({ paginatedQuotes, handleDeleteQuote }: QuoteGridProps) => {
           ¿Está seguro de que desea eliminar esta frase?
         </Text>
         <Flex
-          w="full"
           direction="row"
           gap="4"
-          mt="4"
+          width="full"
           justifyContent="flex-end"
+          position="relative"
           wrap="wrap"
+          marginTop="4"
         >
           <Button
             variant="outline"
+            borderColor="blue.500"
+            color="blue.500"
             type="button"
-            width="full"
+            width="w-1/2"
             onClick={handleCloseDeleteModal}
           >
             Cancelar
           </Button>
           <Button
-            variant="solid"
-            type="button"
-            width="full"
             onClick={onHandleDeleteQuote}
+            width="full"
+            w="w-1/2"
+            background="blue.500"
+            _hover={{
+              bg: 'blue.600',
+            }}
+            _active={{
+              bg: 'blue.400',
+            }}
           >
             Eliminar
           </Button>
         </Flex>
       </Dialog>
-      <Stack
-        gap="8"
+      <Flex
         direction="row"
-        wrap="wrap"
-        justifyContent="space-evenly"
+        gap="4"
+        flex={1}
         w="full"
+        wrap="wrap"
+        paddingTop={8}
+        paddingBottom={8}
+        padding={6}
+        minHeight={500}
+        border="1"
+        borderColor="gray.400"
+        shadow="sm"
+        background={'white'}
       >
         {paginatedQuotes?.length >= 1 ? (
-          <For each={paginatedQuotes}>
-            {(quote: Quote) => (
-              <QuoteCard
-                key={quote.id}
-                quote={quote}
-                handleOpenDeleteQuote={handleOpenDeleteQuote}
-              />
-            )}
-          </For>
+          <SimpleGrid
+            columns={{ sm: 2, md: 3, lg: 4, xl: 5 }}
+            gap="2rem"
+            grid="initial"
+            justifyContent="center"
+            width="full"
+          >
+            <For each={paginatedQuotes}>
+              {(quote: Quote) => (
+                <QuoteCard
+                  key={quote.id}
+                  quote={quote}
+                  handleOpenDeleteQuote={handleOpenDeleteQuote}
+                />
+              )}
+            </For>
+          </SimpleGrid>
         ) : (
           <Flex width="full" justifyContent="center" alignItems="center">
             <EmptyState
@@ -102,8 +134,8 @@ const QuoteGrid = ({ paginatedQuotes, handleDeleteQuote }: QuoteGridProps) => {
             />
           </Flex>
         )}
-      </Stack>
-    </Flex>
+      </Flex>
+    </>
   );
 };
 

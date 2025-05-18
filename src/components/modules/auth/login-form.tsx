@@ -54,7 +54,19 @@ const LoginForm = () => {
           <PasswordInput {...register('password')} placeholder="password" />
           <Field.ErrorText>{errors.password?.message}</Field.ErrorText>
         </Field.Root>
-        <Button role="button" name="login" type="submit" width="full">
+        <Button
+          role="button"
+          name="login"
+          type="submit"
+          width="full"
+          background="blue.500"
+          _hover={{
+            bg: 'blue.600',
+          }}
+          _active={{
+            bg: 'blue.400',
+          }}
+        >
           Login
         </Button>
       </Stack>
