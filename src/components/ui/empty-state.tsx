@@ -12,8 +12,13 @@ export const EmptyState = React.forwardRef<HTMLDivElement, EmptyStateProps>(
   function EmptyState(props, ref) {
     const { title, description, icon, children, ...rest } = props;
     return (
-      <ChakraEmptyState.Root ref={ref} {...rest}>
-        <ChakraEmptyState.Content>
+      <ChakraEmptyState.Root ref={ref} {...rest} w="full">
+        <ChakraEmptyState.Content
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          textAlign="center"
+        >
           {icon && (
             <ChakraEmptyState.Indicator>{icon}</ChakraEmptyState.Indicator>
           )}

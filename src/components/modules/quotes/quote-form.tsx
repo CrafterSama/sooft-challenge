@@ -53,7 +53,6 @@ const UserForm = ({
   useEffect(() => {
     updateData(quotes);
     updatePage(1);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quotes]);
 
   return (
@@ -64,6 +63,7 @@ const UserForm = ({
             <Field.Label>Frase</Field.Label>
             <Textarea
               {...register('phrase')}
+              rows={4}
               onKeyUp={(e) => handleKeyUp(e.currentTarget.value)}
             />
             <Field.ErrorText>{errors.phrase?.message}</Field.ErrorText>
@@ -83,13 +83,26 @@ const UserForm = ({
           >
             <Button
               variant="outline"
+              borderColor="blue.500"
+              color="blue.500"
               type="button"
               width="w-1/2"
               onClick={onCancel}
             >
               Cancelar
             </Button>
-            <Button type="submit" width="full" w="w-1/2">
+            <Button
+              type="submit"
+              width="full"
+              w="w-1/2"
+              background="blue.500"
+              _hover={{
+                bg: 'blue.600',
+              }}
+              _active={{
+                bg: 'blue.400',
+              }}
+            >
               Guardar
             </Button>
           </Flex>

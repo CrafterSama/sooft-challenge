@@ -18,7 +18,7 @@ const QuoteFormDialog = ({
     <Dialog
       open={isOpenQuoteForm}
       onOpenChange={() => handleCloseQuoteForm()}
-      title="Crear frase"
+      title="Guardar frase"
     >
       <QuoteForm
         onCancel={handleCloseQuoteForm}

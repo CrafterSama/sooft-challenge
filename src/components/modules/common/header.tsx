@@ -5,22 +5,21 @@ import { LuChevronLeft } from 'react-icons/lu';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
-import { Avatar } from '@/components/ui/avatar';
-import useAppStoreContext from '@/state-management/users-app-global-state';
-import { Bleed, Button, Flex, Text } from '@chakra-ui/react';
+import { Bleed, Button, Flex } from '@chakra-ui/react';
+import UserInfo from './user-info';
 
 const Header = () => {
-  const { auth, adminUser } = useAppStoreContext();
   const params = useParams();
 
   return (
     <Bleed
-      bg="gray.100"
+      bg="gray.50"
       py={2}
       px={4}
       w="full"
       borderBottom={1}
-      borderColor="gray.200"
+      borderColor="gray.400"
+      shadow="md"
     >
       <Flex
         direction="row"
@@ -44,25 +43,7 @@ const Header = () => {
             </Link>
           )}
         </Flex>
-        <Flex
-          direction="row"
-          gap="4"
-          alignItems="center"
-          justifyContent={'end'}
-        >
-          <Avatar size="sm" name={adminUser.name} />
-          <Flex direction="column" alignItems="start" justifyContent="center">
-            <Text fontSize="base" fontWeight="semibold">
-              {adminUser.name}
-            </Text>
-            <Text fontSize="xs" color="gray.500">
-              {adminUser.email}
-            </Text>
-          </Flex>
-          <Button variant="solid" onClick={auth.logout}>
-            Logout
-          </Button>
-        </Flex>
+        <UserInfo />
       </Flex>
     </Bleed>
   );

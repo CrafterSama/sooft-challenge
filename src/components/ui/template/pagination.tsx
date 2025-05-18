@@ -19,17 +19,29 @@ const Pagination = ({
     <Flex
       width="full"
       direction="row"
+      padding={4}
+      border={1}
+      borderColor="gray.400"
+      shadow="sm"
+      background={'white'}
       justifyContent={data?.length > 0 ? 'space-between' : 'end'}
-      verticalAlign="center"
+      alignItems="center"
     >
       {data?.length > 0 && (
-        <div style={{ display: 'flex', gap: 10, marginTop: 20 }}>
+        <Flex direction="row" gap={2}>
           Página {currentPage} de {totalPages}
-        </div>
+        </Flex>
       )}
-      <div style={{ display: 'flex', gap: 10, marginTop: 20 }}>
+      <Flex gap={2}>
         <IconButton
           size="xs"
+          bg="#fff"
+          borderRadius="md"
+          borderColor="blue.500"
+          color="blue.500"
+          _disabled={{
+            bg: 'blue.100',
+          }}
           disabled={currentPage === 1 || data?.length === 0}
           onClick={() => setCurrentPage((prev: number) => prev - 1)}
         >
@@ -37,12 +49,19 @@ const Pagination = ({
         </IconButton>
         <IconButton
           size="xs"
+          bg="#fff"
+          borderRadius="md"
+          borderColor="blue.500"
+          color="blue.500"
+          _disabled={{
+            bg: 'blue.100',
+          }}
           disabled={currentPage === totalPages || data?.length === 0}
           onClick={() => setCurrentPage((prev: number) => prev + 1)}
         >
           <LuChevronRight />
         </IconButton>
-      </div>
+      </Flex>
     </Flex>
   );
 };
