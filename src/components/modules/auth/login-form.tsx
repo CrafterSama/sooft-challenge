@@ -45,13 +45,21 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <Stack gap="4" align="flex-start" maxW="sm">
+      <Stack gap="8" align="flex-start" maxW="sm">
         <Field.Root invalid={!!errors.email}>
-          <Input {...register('email')} placeholder="admin@example.com" />
+          <Input
+            {...register('email')}
+            placeholder="admin@example.com"
+            borderRadius="lg"
+          />
           <Field.ErrorText>{errors.email?.message}</Field.ErrorText>
         </Field.Root>
         <Field.Root invalid={!!errors.password}>
-          <PasswordInput {...register('password')} placeholder="password" />
+          <PasswordInput
+            {...register('password')}
+            placeholder="password"
+            borderRadius="lg"
+          />
           <Field.ErrorText>{errors.password?.message}</Field.ErrorText>
         </Field.Root>
         <Button
@@ -59,6 +67,7 @@ const LoginForm = () => {
           name="login"
           type="submit"
           width="full"
+          borderRadius="lg"
           background="blue.500"
           _hover={{
             bg: 'blue.600',
@@ -70,7 +79,7 @@ const LoginForm = () => {
           Login
         </Button>
       </Stack>
-      <Text fontSize="sm" textAlign="center" color="gray.400">
+      <Text fontSize="sm" textAlign="center" color="gray.400" mt={4}>
         datos de sesión: admin@example.com:password
       </Text>
     </form>
