@@ -28,7 +28,13 @@ const QuoteCard = ({
       shadow="md"
       position="relative"
     >
-      <Flex direction="column" justifyContent="space-between" w="full" h="full">
+      <Flex
+        direction="column"
+        justifyContent="space-between"
+        w="full"
+        h="full"
+        className="group"
+      >
         <IconButton
           aria-label="Delete Phrase"
           onClick={() => handleOpenDeleteQuote(quote)}
@@ -38,6 +44,10 @@ const QuoteCard = ({
           position="absolute"
           top="-.35rem"
           right="-.35rem"
+          opacity={0}
+          _groupHover={{
+            opacity: 1,
+          }}
         >
           <LuTrash />
         </IconButton>

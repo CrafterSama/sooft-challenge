@@ -1,18 +1,11 @@
 import { useState } from 'react';
 
-import {
-  AvatarIcon,
-  Button,
-  Flex,
-  For,
-  SimpleGrid,
-  Text,
-} from '@chakra-ui/react';
+import { AvatarIcon, Flex, For, SimpleGrid } from '@chakra-ui/react';
 
-import Dialog from '@/components/ui/dialog';
 import { EmptyState } from '@/components/ui/empty-state';
 import { Quote } from '@/types/quote';
 import QuoteCard from './quote-card';
+import QuoteDeleteDialog from './quote-delete-dialog';
 
 type QuoteGridProps = {
   paginatedQuotes: Quote[];
@@ -50,49 +43,12 @@ const QuoteGrid = ({ paginatedQuotes, handleDeleteQuote }: QuoteGridProps) => {
 
   return (
     <>
-      <Dialog
-        open={isOpenDeleteQuote}
-        onOpenChange={() => setIsOpenDeleteQuote(false)}
-        title="Eliminar frase"
-      >
-        <Text fontSize="sm" textAlign="center">
-          ¿Está seguro de que desea eliminar esta frase?
-        </Text>
-        <Flex
-          direction="row"
-          gap="4"
-          width="full"
-          justifyContent="flex-end"
-          position="relative"
-          wrap="wrap"
-          marginTop="4"
-        >
-          <Button
-            variant="outline"
-            borderColor="blue.500"
-            color="blue.500"
-            type="button"
-            width="w-1/2"
-            onClick={handleCloseDeleteModal}
-          >
-            Cancelar
-          </Button>
-          <Button
-            onClick={onHandleDeleteQuote}
-            width="full"
-            w="w-1/2"
-            background="blue.500"
-            _hover={{
-              bg: 'blue.600',
-            }}
-            _active={{
-              bg: 'blue.400',
-            }}
-          >
-            Eliminar
-          </Button>
-        </Flex>
-      </Dialog>
+      <QuoteDeleteDialog
+        isOpenDeleteQuote={isOpenDeleteQuote}
+        setIsOpenDeleteQuote={setIsOpenDeleteQuote}
+        handleCloseDeleteModal={handleCloseDeleteModal}
+        onHandleDeleteQuote={onHandleDeleteQuote}
+      />
       <Flex
         direction="row"
         gap="4"
