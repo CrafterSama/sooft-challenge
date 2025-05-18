@@ -34,6 +34,7 @@ const QuoteDeleteDialog = ({
       >
         <Button
           variant="outline"
+          borderRadius="lg"
           borderColor="blue.500"
           color="blue.500"
           type="button"
@@ -46,6 +47,7 @@ const QuoteDeleteDialog = ({
           onClick={onHandleDeleteQuote}
           width="full"
           w="w-1/2"
+          borderRadius="lg"
           background="blue.500"
           _hover={{
             bg: 'blue.600',

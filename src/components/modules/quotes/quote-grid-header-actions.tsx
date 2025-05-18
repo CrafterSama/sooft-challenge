@@ -27,6 +27,7 @@ const QuoteGridHeaderActions = ({
         placeholder="Buscar Frases"
         onKeyUp={(e) => handleSearch(e.currentTarget.value as string)}
         width={{ base: 'full', md: 'xs' }}
+        borderRadius="lg"
       />
       <Flex
         direction={{
@@ -36,7 +37,12 @@ const QuoteGridHeaderActions = ({
         justifyContent="start"
         gap="2"
       >
-        <Button onClick={onCreateQuote} variant="solid" background="green.500">
+        <Button
+          onClick={onCreateQuote}
+          variant="solid"
+          background="green.500"
+          borderRadius="lg"
+        >
           <Text fontSize="sm" fontWeight="semibold">
             Nueva Frase
           </Text>

@@ -24,7 +24,7 @@ const QuoteCard = ({
       }}
       padding="1rem"
       height="200px"
-      borderRadius="sm"
+      borderRadius="lg"
       shadow="md"
       position="relative"
     >
