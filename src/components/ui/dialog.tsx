@@ -20,7 +20,7 @@ const Dialog = ({
       <Portal>
         <DialogComponent.Backdrop />
         <DialogComponent.Positioner>
-          <DialogComponent.Content>
+          <DialogComponent.Content borderRadius="lg">
             <DialogComponent.Header>
               <DialogComponent.Title>{title}</DialogComponent.Title>
             </DialogComponent.Header>

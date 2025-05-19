@@ -9,12 +9,12 @@ import LoginForm from './login-form';
 describe('Login Form', () => {
   test('se renderiza el input para email', () => {
     renderWithProviders(<LoginForm />);
-    const input = screen.getByPlaceholderText(/Email/i);
+    const input = screen.getByPlaceholderText(/admin@example.com/i);
     expect(input).toBeInTheDocument();
   });
   test('se renderiza el input para password', () => {
     renderWithProviders(<LoginForm />);
-    const input = screen.getByPlaceholderText(/Password/i);
+    const input = screen.getByPlaceholderText(/password/i);
     expect(input).toBeInTheDocument();
   });
   test('se renderiza el boton para hacer submit', () => {
@@ -24,8 +24,8 @@ describe('Login Form', () => {
   });
   test('Llama al submit con email y password', () => {
     renderWithProviders(<LoginForm />);
-    const emailInput = screen.getByPlaceholderText(/Email/i);
-    const passwordInput = screen.getByPlaceholderText(/Password/i);
+    const emailInput = screen.getByPlaceholderText(/admin@example.com/i);
+    const passwordInput = screen.getByPlaceholderText(/password/i);
     const loginButton = screen.getByRole('button', { name: /Login/i });
 
     userEvent.type(emailInput, 'test@example.com');

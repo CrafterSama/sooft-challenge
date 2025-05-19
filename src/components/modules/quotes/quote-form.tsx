@@ -9,7 +9,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import { QuoteSchema } from './quote-form.schema';
 
-const UserForm = ({
+const QuoteForm = ({
   onCancel,
   updateData,
   updatePage,
@@ -65,12 +65,18 @@ const UserForm = ({
               {...register('phrase')}
               rows={4}
               onKeyUp={(e) => handleKeyUp(e.currentTarget.value)}
+              borderRadius="lg"
+              placeholder="Frase"
             />
             <Field.ErrorText>{errors.phrase?.message}</Field.ErrorText>
           </Field.Root>
           <Field.Root invalid={!!errors.author}>
             <Field.Label>Autor</Field.Label>
-            <Input {...register('author')} />
+            <Input
+              {...register('author')}
+              borderRadius="lg"
+              placeholder="Autor"
+            />
             <Field.ErrorText>{errors.author?.message}</Field.ErrorText>
           </Field.Root>
           <Flex
@@ -114,4 +120,4 @@ const UserForm = ({
   );
 };
 
-export default UserForm;
+export default QuoteForm;
