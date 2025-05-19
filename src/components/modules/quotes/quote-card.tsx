@@ -38,6 +38,7 @@ const QuoteCard = ({
         <IconButton
           aria-label="Delete Phrase"
           onClick={() => handleOpenDeleteQuote(quote)}
+          borderRadius="lg"
           background="red.400"
           size="xs"
           width={8}
