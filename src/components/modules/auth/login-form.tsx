@@ -80,7 +80,7 @@ const LoginForm = () => {
         </Button>
       </Stack>
       <Text fontSize="sm" textAlign="center" color="gray.400" mt={4}>
-        datos de sesión: admin@example.com:password
+        usuario: admin@example.com, password: password
       </Text>
     </form>
   );
