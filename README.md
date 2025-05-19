@@ -2,7 +2,7 @@
 
 Website: [https://sooft-challenge-five.vercel.app/](https://sooft-challenge-five.vercel.app/)
 
-Datos de inicio de sesión: admin@example.com:password
+Datos de inicio de sesión: usuario: admin@example.com, contraseña: password
 
 Una Pequeña WebApp, para "Agregar, Borrar y filtrar/buscar frases", lo primero que nos encontramos al abrir la aplicación es un inicio de sesión, usamos los datos que estan lineas mas arriba, ya dentro, luego de iniciar sesión, ya nos encontramos la pantalla para agregar las Frases
 
