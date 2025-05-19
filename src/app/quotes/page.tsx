@@ -12,7 +12,7 @@ import useAppStoreContext from '@/state-management/users-app-global-state';
 import { Quote } from '@/types/quote';
 import { Flex } from '@chakra-ui/react';
 
-const UsersPage = () => {
+const QuotesPage = () => {
   const { quotes, deleteQuote } = useAppStoreContext();
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -95,4 +95,4 @@ const UsersPage = () => {
   );
 };
 
-export default UsersPage;
+export default QuotesPage;
